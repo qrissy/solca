@@ -25,7 +25,7 @@
             tools:text="Television" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/text7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -41,9 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView7"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toTopOf="@+id/textView7"
+            app:layout_constraintBottom_toBottomOf="@+id/text7"
+            app:layout_constraintStart_toEndOf="@+id/text7"
+            app:layout_constraintTop_toTopOf="@+id/text7"
             tools:text="3" />
 
         <TextView
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_close_black"
-            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintBottom_toTopOf="@+id/text7"
             app:layout_constraintEnd_toEndOf="@+id/watt"
             app:layout_constraintTop_toTopOf="@+id/appliance_name" />
 

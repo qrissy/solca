@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         //energyList.add(new Energy("Television", "3", "30"));
         //energyList.add("Ceiling", "15", "30");
         //energyList.add("Laptop", "");
-        //int insertIndex = 1;
 
 
         /*
