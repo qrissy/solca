@@ -2,14 +2,23 @@ package com.example.solarcalculator2;
 
 public class Energy {
 
+    private int id;
     private String name;
-    String count;
-    String watt;
+    private String count;
+    private String watt;
 
     public Energy(String name, String count, String watt) {
         this.name = name;
         this.count = count;
         this.watt = watt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

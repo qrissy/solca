@@ -1,6 +1,7 @@
 package com.example.solarcalculator2;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -16,8 +17,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
+
     List<Energy> energyList = new ArrayList<>();
-    RecyclerView recyclerView;
     ConsumptionAdapter mAdapter;
 
     @BindView(R.id.appliance_name)
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         //Bind the views
         ButterKnife.bind(this);
 
+        mAdapter = new ConsumptionAdapter(energyList, this);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(mAdapter);
+
         //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         //mAdapter = new ConsumptionAdapter(energyList);
@@ -57,18 +63,19 @@ public class MainActivity extends AppCompatActivity {
          */
 
 
-        addbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = mApplianceName.getText().toString();
-                String count = mApplianceCount.getText().toString();
-                String energy = mApplianceEnergy.getText().toString();
+        addbtn.setOnClickListener(view -> {
+            String name = mApplianceName.getText().toString();
+            String count = mApplianceCount.getText().toString();
+            String energy = mApplianceEnergy.getText().toString();
 
-                //After onclick
-                energyList.add(new Energy(name, count, energy));
-                Toast.makeText(MainActivity.this, name + " "
-                        + count + " " + energy, Toast.LENGTH_SHORT).show();
-            }
+            //After onclick
+            energyList.add(new Energy(name, count, energy));
+            Toast.makeText(MainActivity.this, name + " "
+                    + count + " " + energy, Toast.LENGTH_SHORT).show();
+        });
+
+        closebtn.setOnClickListener(view -> {
+            mRecyclerView.setVisibility(View.VISIBLE);
         });
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -53,9 +54,22 @@ public class ConsumptionAdapter extends RecyclerView.Adapter<ConsumptionAdapter.
             @Override
             public void onClick(View view) {
                 //Handle what happens when the remove is clicked here
+                int id = item.getId();
+                deleteItem(position);
+                onDelete(id);
             }
         });
 
+    }
+
+    private void deleteItem(int position) {
+        items.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    private void onDelete(int id) {
+        if (items.size() > 0) items.remove(id);
+        Toast.makeText(context, "Deleted " + id, Toast.LENGTH_SHORT).show();
     }
 
     @Override
