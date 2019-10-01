@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             String energy = mApplianceEnergy.getText().toString();
 
             //After onclick
-            energyList.add(new Energy(name, count, energy));
+            //energyList.add(new Energy(name, count, energy));
             Toast.makeText(MainActivity.this, name + " "
                     + count + " " + energy, Toast.LENGTH_SHORT).show();
         });
