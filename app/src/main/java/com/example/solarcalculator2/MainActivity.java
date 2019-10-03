@@ -69,9 +69,8 @@ public class MainActivity extends AppCompatActivity {
             String energy = mApplianceEnergy.getText().toString();
 
             //After onclick
-            //energyList.add(new Energy(name, count, energy));
-            Toast.makeText(MainActivity.this, name + " "
-                    + count + " " + energy, Toast.LENGTH_SHORT).show();
+            energyList.add(new Energy(name, count, energy));
+            //Toast.makeText(MainActivity.this, name + " "+ count + " " + energy, Toast.LENGTH_SHORT).show();
         });
 
         closebtn.setOnClickListener(view -> {
